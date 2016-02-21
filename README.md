@@ -1,6 +1,12 @@
 # arduino-foo
 There are several arduino projects on this repo. For each of them find a description below.
 
-## police-station
+## PoliceStation
+The effect of the emergency lighting and siren.
 
-![police station photo](/images/police-station.png)
+To activate it just press the button.
+
+[
+![police station photo](PoliceStation/media/PoliceStation.jpg)
+]
+(PoliceStation/media/PoliceStation.mp4)
