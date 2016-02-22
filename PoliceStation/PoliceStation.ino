@@ -4,6 +4,7 @@ int l = 1;
 const float pi = 3.14;
 
 void setup(){
+  Serial.begin(9600);
   pinMode(5, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(3, OUTPUT);
@@ -28,7 +29,7 @@ void loop() {
     digitalWrite(3, LOW);
     k = 4;
     l = 1;
-    int o = 100000;
+    float o = -50;
 
     for (int i = 0; i<20; i++) {
       for (int i=0; i<2; i++) {
@@ -36,6 +37,7 @@ void loop() {
         for (int i = 0; i<20; i++) {
           o++;
           tone(8, 2000+600*sin(o/100 * pi));
+          Serial.println(sin(o/100 * pi));
           delay(8);
         }
         digitalWrite(k,LOW);
