@@ -1,7 +1,8 @@
+#include "Lib.h"
+
 int switchState = 13;
 int k = 3;
 int l = 1;
-const float pi = 3.14;
 float o;
 
 void setup() {
@@ -34,10 +35,10 @@ void loop() {
     for (int i = 0; i<20; i++) {
       for (int i=0; i<2; i++) {
         digitalWrite(k, HIGH);
-        siren(20);
+        o = siren(20, o);
 
         digitalWrite(k,LOW);
-        siren(20);
+        o = siren(20, o);
       }
       digitalWrite(4, LOW);
       digitalWrite(5, LOW);
@@ -50,12 +51,3 @@ void loop() {
   }
 }
 
-
-void siren(int duration) {
-  for (int i = 0; i<duration; i++) {
-    o++;
-    tone(8, 2000+600*sin(o/100 * pi));
-    Serial.println(sin(o/100 * pi));
-    delay(8);
-  }
-}
