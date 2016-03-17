@@ -18,16 +18,12 @@ void loop() {
   if (switchState == LOW) {
     delay(10);
     if (k == 0) {
+      digitalWrite(3, HIGH);
       l = 1;
     }
     else if (k == 100) {
-      l = -1;
-    }
-    if (k < 50) {
-      digitalWrite(3, HIGH);
-    }
-    else {
       digitalWrite(3, LOW);
+      l = -1;
     }
     k+=l;
   }
