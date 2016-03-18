@@ -29,28 +29,19 @@ void loop() {
   }
   else {
     digitalWrite(3, LOW);
-    k = 4;
-    l = 1;
+    k = 0;
     o = 10.0;
 
     for (int i=0; i<20; i++) {
       for (int i=0; i<2; i++) {
-        digitalWrite(k, HIGH);
+        digitalWrite(4+k, HIGH);
         o = siren(25, o);
 
-        digitalWrite(k,LOW);
+        digitalWrite(4+k,LOW);
         o = siren(25, o);
       }
-      digitalWrite(4, LOW);
-      digitalWrite(5, LOW);
-
-      if (k == 4) {
-        l = 1;
-      }
-      else if (k == 5) {
-        l = -1;
-      }
-      k+=l;
+      k += 1;
+      k %= 2;
     }
     noTone(8);
   }
