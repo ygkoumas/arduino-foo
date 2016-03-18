@@ -25,12 +25,12 @@ void loop() {
       digitalWrite(3, LOW);
       l = -1;
     }
-    k+=l;
+    k += l;
   }
   else {
     digitalWrite(3, LOW);
     k = 0;
-    o = 10.0;
+    o = 3.0;
 
     for (int i=0; i<20; i++) {
       for (int i=0; i<2; i++) {
