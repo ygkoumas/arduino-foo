@@ -8,7 +8,8 @@ float sgn(float num) {
   return -1;
 }
 
-float siren(int duration, float o) {
+void siren(int duration) {
+  static float o = 0;
   for (int i = 0; i<duration; i++) {
     o++;
 
@@ -18,6 +19,5 @@ float siren(int duration, float o) {
     Serial.println(sin(o/100 * pi));
     delay(8);
   }
-  return o;
 }
 

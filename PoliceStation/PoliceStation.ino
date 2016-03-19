@@ -3,7 +3,6 @@
 int switchState = 13;
 int k = 3;
 int l = 1;
-float o;
 
 void setup() {
   Serial.begin(9600);
@@ -30,15 +29,14 @@ void loop() {
   else {
     digitalWrite(3, LOW);
     k = 0;
-    o = 3.0;
 
     for (int i=0; i<20; i++) {
       for (int i=0; i<2; i++) {
         digitalWrite(4+k, HIGH);
-        o = siren(25, o);
+        siren(25);
 
         digitalWrite(4+k,LOW);
-        o = siren(25, o);
+        siren(25);
       }
       k += 1;
       k %= 2;
