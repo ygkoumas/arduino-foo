@@ -21,3 +21,18 @@ void siren(int duration) {
   }
 }
 
+void simpleSiren(int duration) {
+  static int o = 0;
+  float toneFrequency;
+  o += duration;
+
+  if (o%200 < 100) {
+    toneFrequency = 2500;
+  }
+  else {
+    toneFrequency = 1500;
+  }
+
+  tone(8, toneFrequency);
+  delay(10* duration);
+}
