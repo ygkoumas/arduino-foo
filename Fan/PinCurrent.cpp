@@ -11,16 +11,9 @@ PinCurrent::PinCurrent(int pin, int current)
 
 void PinCurrent::onoff()
 {
-  if (_current == 0) {
-    _current=1;
-    delay(500);
-    digitalWrite(_pin, 1);
-  }
-  else {
-    _current=0;
-    delay(500);
-    digitalWrite(_pin, 0);
-  }
-
+  _current += 1;
+  _current %= 2;
+  delay(500);
+  digitalWrite(_pin, _current);
 }
 
